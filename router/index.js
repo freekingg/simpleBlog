@@ -4,7 +4,11 @@ var Router = express.Router()
 var ArticlModel = require('../models/article')
 
 Router.get('/',function(req,res){
-	res.render('html/index')
+	// 获取所有文章，并传递页面
+	ArticlModel.find({},null,{sort:{date:-1}},function(err,doc){
+		if(err)throw err;
+		res.render('html/index',{artcleDate:doc})
+	})
 })
 
 module.exports = Router;

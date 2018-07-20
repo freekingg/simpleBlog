@@ -12,5 +12,5 @@ var ArticleSchema = new Schema({
 		type:Array
 	}
 })
-var ArticlModel = mongoose.model('ArticlModel',ArticleSchema)
+var ArticlModel = mongoose.model('Articl',ArticleSchema)
 module.exports = ArticlModel

@@ -281,7 +281,7 @@ body{
 }
 .container-about .item .item-box p{
 	color:#6a6a6a;
-	margin-bottom:20px;
+	/* margin-bottom:20px; */
 }
 /* end about */
 
@@ -308,3 +308,12 @@ body{
     cursor: pointer;
 }
 /*end comment*/
+
+.content{
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 7;
+	-webkit-box-orient: vertical;
+	height: 306px;
+}
