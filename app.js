@@ -1,6 +1,7 @@
 const express = require('express')
 var ejs = require('ejs');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var mongoose = require('mongoose');
 const dbOptions = require('./config/config');
 
@@ -16,6 +17,16 @@ db.on('error',function(err){
 db.on('open',function(){
     console.log('db connection sucess');
 })
+
+// 使用 session 中间件
+app.use(session({
+    secret :  'Wilson', // 对session id 相关的cookie 进行签名
+    resave : true,
+    saveUninitialized: false // 是否保存未初始化的会话
+    // cookie : {
+    //     maxAge : 1000 * 60 * 3, // 设置 session 的有效时间，单位毫秒
+    // },
+}));
 
 // 创建 application/json 解析
 app.use(bodyParser.json())
