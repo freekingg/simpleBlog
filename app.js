@@ -3,13 +3,13 @@ var ejs = require('ejs');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
+var cors = require('cors');
 const dbOptions = require('./config/config');
 
 const app = express()
 // 连接mongoDB数据库
 mongoose.connect(dbOptions.url,dbOptions.options);
 var db = mongoose.connection;
-
 // 监听数据库连接状态
 db.on('error',function(err){
     console.log('db connection fail')
@@ -17,6 +17,10 @@ db.on('error',function(err){
 db.on('open',function(){
     console.log('db connection sucess');
 })
+
+// app.use(allowCrossDomain);
+
+// app.use(cors({credentials: true, origin: 'http://192.168.0.115:8888'}));
 
 // 使用 session 中间件
 app.use(session({
