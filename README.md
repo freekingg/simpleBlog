@@ -11,6 +11,10 @@ node全栈
 - 模板引擎：ejs
 - JS和UI库：jquery,layui
 - Ajsx库：axios
+## 在线地址
+已经部署到自己的乞丐云服务器
+地址：http://blog.leqianduan.com
+
 ## 目录结构
 后端采用传统的MVC结构，models是对象模型（就是数据格式），views是视图层，所有的请求通过routes（路由）分发。
 ```
